@@ -18,8 +18,9 @@ pivot = df.pivot_table(
   aggfunc=identity,)
 
 app.layout = html.Div([
-    html.H3(children = 'Select three columns in the dropdown below'),
-    html.H3(children = 'for the index, columns and values:'),
+    html.H3(children = 'Remove the default items from the dropdown'),
+    html.H3(children = 'and then select three columns,'),
+    html.H3(children = 'one each for the index, columns and values:'),
     dcc.Dropdown(
         id = 'table-values-dropdown',
         options=[
@@ -50,10 +51,11 @@ app.layout = html.Div([
             {'label': 'NumberOfShells', 'value': 'NumberOfShells'}, 
             {'label': 'NumberOfValence', 'value': 'NumberOfValence'}, 
         ],
+        value = ['Period', 'Group', 'Element'],
         multi = True
         
     ),
-    html.H3(children = 'After making your selection click "Update" !'),
+    html.H3(children = 'After making your selections, click "Update" !'),
     html.Button("Update", id="Update"),
     
     html.Div(dash_table.DataTable(
