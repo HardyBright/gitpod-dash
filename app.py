@@ -50,15 +50,10 @@ app.layout = html.Div([
             {'label': 'NumberOfValence', 'value': 'NumberOfValence'}, 
         ],
         multi = True
-
-
-            
         
-
-
-
     ),
-
+    html.Button("OK!", id="OK!"),
+    
     html.Div(dash_table.DataTable(
         id='table',
         columns=[{"name": str(i), "id": str(i)} for i in pivot.columns], 
