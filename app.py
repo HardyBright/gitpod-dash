@@ -62,6 +62,17 @@ app.layout = html.Div([
     ))
 ])
 
+@app.callback(
+    Output(component_id = 'table', component_property = 'data'),
+    State(component_id = 'table-values-dropdown', component_property = 'value'),
+    Input(component_id = 'OK!', component_property = 'n_clicks'),
+)
 
-
+def update_table(n_clicks, value):
+    pivot = df.pivot_table(
+        index=value[0],
+        columns=value[1], 
+        values=value[2],
+        aggfunc=identity,)    
+        
 app.run_server(debug=True, host="0.0.0.0")
