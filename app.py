@@ -22,9 +22,38 @@ app.layout = html.Div([
     dcc.Dropdown(
         id = 'table-values-dropdown',
         options=[
+            {'label': 'AtomicNumber', 'value': 'AtomicNumber'},
+            {'label': 'Element', 'value': 'Element'}, 
+            {'label': 'Symbol', 'value': 'Symbol'}, 
+            {'label': 'AtomicMass', 'value': 'AtomicMass'}, 
+            {'label': 'NumberOfNeutrons', 'value': 'NumberOfNeutrons'}, 
+            {'label': 'NumberOfProtons', 'value': 'NumberOfProtons'}, 
+            {'label': 'NumberOfElectrons', 'value': 'NumberOfElectrons'}, 
+            {'label': 'Period', 'value': 'Period'}, 
+            {'label': 'Group', 'value': 'Group'}, 
+            {'label': 'Phase', 'value': 'Phase'}, 
+            {'label': 'Natural', 'value': 'Natural'}, 
+            {'label': 'Metal', 'value': 'Metal'}, 
+            {'label': 'Nonmetal', 'value': 'Nonmetal'}, 
+            {'label': 'Metalloid', 'value': 'Metalloid'}, 
+            {'label': 'Type', 'value': 'Type'}, 
+            {'label': 'Electronegativity', 'value': 'Electronegativity'}, 
+            {'label': 'FirstIonization', 'value': 'FirstIonization'}, 
+            {'label': 'Density', 'value': 'Density'}, 
+            {'label': 'MeltingPoint', 'value': 'MeltingPoint'}, 
+            {'label': 'BoilingPoint', 'value': 'BoilingPoint'}, 
+            {'label': 'NumberOfIsotopes', 'value': 'NumberOfIsotopes'}, 
+            {'label': 'Discoverer', 'value': 'Discoverer'}, 
+            {'label': 'Year', 'value': 'Year'}, 
+            {'label': 'SpecificHeat', 'value': 'SpecificHeat'}, 
+            {'label': 'NumberOfShells', 'value': 'NumberOfShells'}, 
+            {'label': 'NumberOfValence', 'value': 'NumberOfValence'}, 
+        ],
+        multi = True
+
 
             
-        ]
+        
 
 
 
