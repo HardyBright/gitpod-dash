@@ -53,8 +53,8 @@ app.layout = html.Div([
         multi = True
         
     ),
-    html.H3(children = 'After making your selection click start!'),
-    html.Button("Start", id="Start"),
+    html.H3(children = 'After making your selection click "Update" !'),
+    html.Button("Update", id="Update"),
     
     html.Div(dash_table.DataTable(
         id='table',
@@ -68,7 +68,7 @@ app.layout = html.Div([
     [Output(component_id = 'table', component_property = 'data'),
     Output(component_id = 'table', component_property = 'columns')],
     State(component_id = 'table-values-dropdown', component_property = 'value'),
-    Input(component_id = 'Start', component_property = 'n_clicks'),
+    Input(component_id = 'Update', component_property = 'n_clicks'),
 )
 
 def update_table(value, n_clicks):
