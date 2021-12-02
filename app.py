@@ -15,10 +15,11 @@ pivot = df.pivot_table(
   index='Period',
   columns='Group', 
   values='Element',
-  aggfunc=identity,
-)
+  aggfunc=identity,)
 
 app.layout = html.Div([
+    html.H3(children = 'Select three columns in the dropdown below'),
+    html.H3(children = 'for the index, columns and values:'),
     dcc.Dropdown(
         id = 'table-values-dropdown',
         options=[
@@ -52,7 +53,8 @@ app.layout = html.Div([
         multi = True
         
     ),
-    html.Button("OK!", id="OK!"),
+    html.H3(children = 'After making your selection click start!'),
+    html.Button("Start", id="Start"),
     
     html.Div(dash_table.DataTable(
         id='table',
@@ -66,14 +68,14 @@ app.layout = html.Div([
     [Output(component_id = 'table', component_property = 'data'),
     Output(component_id = 'table', component_property = 'columns')],
     State(component_id = 'table-values-dropdown', component_property = 'value'),
-    Input(component_id = 'OK!', component_property = 'n_clicks'),
+    Input(component_id = 'Start', component_property = 'n_clicks'),
 )
 
 def update_table(value, n_clicks):
     pivot = df.pivot_table(
-        index='AtomicMass',
-        columns='Symbol', 
-        values='Period',
+        index=value[0],
+        columns=value[1], 
+        values=value[2],
         aggfunc=identity,)
         
     columns=[{"name": str(i), "id": str(i)} for i in pivot.columns]
