@@ -68,11 +68,12 @@ app.layout = html.Div([
     Input(component_id = 'OK!', component_property = 'n_clicks'),
 )
 
-def update_table(n_clicks, value):
+def update_table(value, n_clicks):
     pivot = df.pivot_table(
         index=value[0],
         columns=value[1], 
         values=value[2],
-        aggfunc=identity,)    
-        
+        aggfunc=identity,)
+    return pivot
+
 app.run_server(debug=True, host="0.0.0.0")
